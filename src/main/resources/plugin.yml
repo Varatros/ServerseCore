@@ -1,0 +1,15 @@
+name: ServerseCore
+version: '${project.version}'
+main: io.github.varatros.serversecore.ServerseCore
+api-version: 1.18
+authors: [ Varatros ]
+description: Core plugin used by Serverse
+website: github.com/Varatros
+
+commands:
+  map:
+    description: Links the map in chat.
+  twitch:
+    description: Links twitch affiliates in chat.
+  shrug:
+    description: Shrugs.
