@@ -6,13 +6,15 @@ import io.github.varatros.serversecore.events.player.PlayerConnectionEvents;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.util.Objects;
+
 public final class ServerseCore extends JavaPlugin {
 
     @Override
     public void onEnable() {
         // Plugin startup logic
-        this.getCommand("map").setExecutor(new MapCommand());
-        this.getCommand("twitch").setExecutor(new TwitchCommand());
+        Objects.requireNonNull(this.getCommand("map")).setExecutor(new MapCommand());
+        Objects.requireNonNull(this.getCommand("twitch")).setExecutor(new TwitchCommand());
         Bukkit.getPluginManager().registerEvents(new PlayerConnectionEvents(), this);
 
 
