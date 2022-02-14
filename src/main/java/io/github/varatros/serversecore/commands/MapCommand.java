@@ -16,11 +16,15 @@ public class MapCommand implements CommandExecutor {
             .append(Component.text("] ").color(NamedTextColor.GOLD)).build();
     final TextComponent mapMessage = Component.text().append(prefix)
             .append(Component.text("The dynmap address is ").color(NamedTextColor.GOLD))
-            .append(Component.text("https://map.serverse.xyz").color(NamedTextColor.AQUA).clickEvent(ClickEvent.openUrl("https://map.serverse.xyz")))
+            .append(Component.text("https://map.serverse.xyz").color(NamedTextColor.AQUA)
+                    .clickEvent(ClickEvent.openUrl("https://map.serverse.xyz")))
             .append(Component.text("\n").append(prefix))
             .append(Component.text("You can also use ").color(NamedTextColor.GOLD))
-            .append(Component.text("/dynmap webregister ").color(NamedTextColor.AQUA).hoverEvent(HoverEvent.showText(Component.text("Click Me!").color(NamedTextColor.AQUA))).clickEvent(ClickEvent.suggestCommand("/dynmap webregister")))
-            .append(Component.text("to unlock additional features on the map!").color(NamedTextColor.GOLD)).build();
+            .append(Component.text("/dynmap webregister ").color(NamedTextColor.AQUA)
+                    .hoverEvent(HoverEvent.showText(Component.text("Click Me!").color(NamedTextColor.AQUA)))
+                    .clickEvent(ClickEvent.suggestCommand("/dynmap webregister")))
+            .append(Component.text("to unlock additional features on the map!").color(NamedTextColor.GOLD))
+            .build();
 
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
