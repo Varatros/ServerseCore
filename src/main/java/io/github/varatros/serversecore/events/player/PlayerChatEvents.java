@@ -24,8 +24,7 @@ public class PlayerChatEvents implements Listener {
     private void playerCommandEvent(PlayerCommandPreprocessEvent event) {
         for (UUID playerUUID : commandSpyHandler.getSpying()) {
             Player player = Bukkit.getPlayer(playerUUID);
-                if (player != null && !player.hasPermission("serverse.staff")) {
-                    player.sendMessage(event.getPlayer().getName()+": "+event.getMessage());
+                if (player != null && !event.getPlayer().hasPermission("serverse.staff")) {
                     TextComponent commandSpyMessage = Component.text().append(prefix)
                             .append(Component.text(event.getPlayer().getName()).color(NamedTextColor.GRAY))
                             .append(Component.text(": ").color(NamedTextColor.DARK_GRAY))
