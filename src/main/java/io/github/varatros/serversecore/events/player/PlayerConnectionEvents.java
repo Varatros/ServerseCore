@@ -38,7 +38,7 @@ public class PlayerConnectionEvents implements Listener {
                 .append(Component.text(player.getName()).color(NamedTextColor.GOLD))
                 .append(Component.text(" joined this world.").color(NamedTextColor.GOLD))
                 .build();
-        Bukkit.broadcast(joinMessage);
+        event.joinMessage(joinMessage);
     }
 
     @EventHandler
@@ -48,7 +48,7 @@ public class PlayerConnectionEvents implements Listener {
                 .append(Component.text(player.getName()).color(NamedTextColor.GOLD))
                 .append(Component.text(" joined this world.").color(NamedTextColor.GOLD))
                 .build();
-        Bukkit.broadcast(quitMessage);
+        event.quitMessage(quitMessage);
     }
 
 }
