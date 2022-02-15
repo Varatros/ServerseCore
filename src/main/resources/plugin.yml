@@ -13,3 +13,22 @@ commands:
     description: Links twitch affiliates in chat.
   shrug:
     description: Shrugs.
+  commandspy:
+    aliases: [cmdspy, cspy, cs]
+    permission: serverse.staff
+    permission-message: You do not have permission to use this command.
+    description: CommandSpy.
+
+permissions:
+  serverse.*:
+    description: Wildcard permission
+    default: op
+    children:
+      serverse.admin: true
+      serverse.staff: true
+  serverse.admin:
+    description: Serverse admin permission
+    children:
+      serverse.staff: true
+  serverse.staff:
+    description: Serverse staff permission
