@@ -41,9 +41,9 @@ public class CommandSpyCommand implements CommandExecutor {
                 .build();
 
         player.sendMessage(finalMessage);
-        if (ServerseCore.CMD_LOG_CHANNEL.isPresent() && ServerseCore.CMD_LOG_CHANNEL.get().asTextChannel().isPresent()) {
-            ServerseCore.CMD_LOG_CHANNEL.get().asTextChannel().get().sendMessage(finalMessage.content());
-        }
+
+        ServerseCore.CMD_LOG_CHANNEL.ifPresent(textChannel -> textChannel.sendMessage(finalMessage.content()));
+
         return false;
     }
 }

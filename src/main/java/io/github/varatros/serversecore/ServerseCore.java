@@ -11,13 +11,16 @@ import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.javacord.api.DiscordApi;
 import org.javacord.api.entity.channel.Channel;
+import org.javacord.api.entity.channel.TextChannel;
 
 import java.util.Objects;
 import java.util.Optional;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeUnit;
 
 public final class ServerseCore extends JavaPlugin {
     public static DiscordApi API;
-    public static Optional<Channel> CMD_LOG_CHANNEL;
+    public static Optional<TextChannel> CMD_LOG_CHANNEL;
 
     @Override
     public void onEnable() {
@@ -33,7 +36,7 @@ public final class ServerseCore extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new PlayerConnectionEvents(), this);
 
         API = DiscordInit.init("token goes here");
-        CMD_LOG_CHANNEL = API.getChannelById("channel id goes here");
+        CMD_LOG_CHANNEL = API.getTextChannelById("channel id goes here");
 
     }
 
