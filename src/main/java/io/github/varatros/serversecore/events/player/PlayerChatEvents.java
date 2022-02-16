@@ -33,7 +33,7 @@ public class PlayerChatEvents implements Listener {
                             .build();
                     player.sendMessage(commandSpyMessage);
                     //Will probably have to make custom message depending on how color codes work.
-                    //Also need to figure out how to get Bungee Server.
+                    //Also need to figure out how to get Bungee Server. [SERVER] Name: Command
                     ServerseCore.CMD_LOG_CHANNEL.ifPresent(textChannel -> textChannel.sendMessage(commandSpyMessage.content()));
             }
         }
