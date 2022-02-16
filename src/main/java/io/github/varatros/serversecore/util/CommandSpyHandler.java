@@ -16,7 +16,7 @@ public class CommandSpyHandler {
         return isSpying;
     }
 
-    public Boolean toggleIsSpying(UUID playerUUID) {
+    public boolean toggleIsSpying(UUID playerUUID) {
         if (isSpying.contains(playerUUID)) {
             isSpying.remove(playerUUID);
             return false;
