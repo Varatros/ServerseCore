@@ -11,7 +11,6 @@ public class ShrugCommand implements CommandExecutor {
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
         if (!(sender instanceof Player player)) return false;
         player.chat("¯\\_(ツ)_/¯");
-
-        return false;
+        return true;
     }
 }

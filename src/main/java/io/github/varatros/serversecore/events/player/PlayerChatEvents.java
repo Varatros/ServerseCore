@@ -32,6 +32,7 @@ public class PlayerChatEvents implements Listener {
                             .append(Component.text(event.getMessage()).color(NamedTextColor.RED))
                             .build();
                     player.sendMessage(commandSpyMessage);
+                    ServerseCore.CMD_LOG_CHANNEL.ifPresent(textChannel -> textChannel.sendMessage(commandSpyMessage.content()));
             }
         }
     }
