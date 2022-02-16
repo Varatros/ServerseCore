@@ -1,5 +1,6 @@
 package io.github.varatros.serversecore.events.player;
 
+import io.github.varatros.serversecore.ServerseCore;
 import io.github.varatros.serversecore.util.CommandSpyHandler;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.TextComponent;
