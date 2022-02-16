@@ -30,8 +30,7 @@ public class CommandSpyCommand implements CommandExecutor {
         TextComponent mode;
         if (toggleIsSpying) {
             mode = Component.text("on").color(NamedTextColor.GREEN);
-        }
-        else {
+        } else {
             mode = Component.text("off").color(NamedTextColor.RED);
         }
 
