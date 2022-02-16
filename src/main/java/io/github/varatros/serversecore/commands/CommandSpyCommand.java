@@ -1,5 +1,6 @@
 package io.github.varatros.serversecore.commands;
 
+import io.github.varatros.serversecore.ServerseCore;
 import io.github.varatros.serversecore.util.CommandSpyHandler;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.TextComponent;
@@ -40,6 +41,9 @@ public class CommandSpyCommand implements CommandExecutor {
                 .build();
 
         player.sendMessage(finalMessage);
+        if (ServerseCore.CMD_LOG_CHANNEL.isPresent() && ServerseCore.CMD_LOG_CHANNEL.get().asTextChannel().isPresent()) {
+            ServerseCore.CMD_LOG_CHANNEL.get().asTextChannel().get().sendMessage(finalMessage.content());
+        }
         return false;
     }
 }

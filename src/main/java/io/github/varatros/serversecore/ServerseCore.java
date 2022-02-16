@@ -4,14 +4,20 @@ import io.github.varatros.serversecore.commands.CommandSpyCommand;
 import io.github.varatros.serversecore.commands.MapCommand;
 import io.github.varatros.serversecore.commands.ShrugCommand;
 import io.github.varatros.serversecore.commands.TwitchCommand;
+import io.github.varatros.serversecore.discord.DiscordInit;
 import io.github.varatros.serversecore.events.player.PlayerChatEvents;
 import io.github.varatros.serversecore.events.player.PlayerConnectionEvents;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.javacord.api.DiscordApi;
+import org.javacord.api.entity.channel.Channel;
 
 import java.util.Objects;
+import java.util.Optional;
 
 public final class ServerseCore extends JavaPlugin {
+    public static DiscordApi API;
+    public static Optional<Channel> CMD_LOG_CHANNEL;
 
     @Override
     public void onEnable() {
@@ -26,7 +32,8 @@ public final class ServerseCore extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new PlayerChatEvents(), this);
         Bukkit.getPluginManager().registerEvents(new PlayerConnectionEvents(), this);
 
-
+        API = DiscordInit.init("token goes here");
+        CMD_LOG_CHANNEL = API.getChannelById("channel id goes here");
 
     }
 
