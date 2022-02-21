@@ -1,27 +1,17 @@
 package io.github.varatros.serversecore;
 
 import io.github.varatros.serversecore.commands.*;
-import io.github.varatros.serversecore.discord.DiscordInit;
 import io.github.varatros.serversecore.events.player.PlayerChatEvents;
 import io.github.varatros.serversecore.events.player.PlayerConnectionEvents;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.javacord.api.DiscordApi;
-import org.javacord.api.entity.channel.Channel;
-import org.javacord.api.entity.channel.TextChannel;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.Objects;
-import java.util.Optional;
-import java.util.logging.Logger;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.TimeUnit;
 
 public final class ServerseCore extends JavaPlugin {
-    public static DiscordApi API;
-    public static Optional<TextChannel> CMD_LOG_CHANNEL;
 
     @Override
     public void onEnable() {
@@ -48,12 +38,8 @@ public final class ServerseCore extends JavaPlugin {
                 e.printStackTrace();
             }
         }
-
-        if (configData.get("token") != null && configData.get("logchannel") != null) {
-            API = DiscordInit.init("token goes here");
-            CMD_LOG_CHANNEL = API.getTextChannelById("channel id goes here");
-        }
     }
+
 
     @Override
     public void onDisable() {
